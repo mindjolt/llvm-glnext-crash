@@ -125,12 +125,6 @@ bool Obliviate::detectBuggyQualcommDevice() {
         info("libllvm-glnext.so library not found. Obliviate disabled");
         return false;
     }
-    if (sb.st_size != BUGGY_SIZE) {
-        info("libllvm-glnext.so has different size than buggy version: %d != %d. Obliviate disabled",
-                sb.st_size, BUGGY_SIZE);
-        return false;
-    }
-    warn("Buggy libllvm-glnext.so detected");
     return true;
 }
 
